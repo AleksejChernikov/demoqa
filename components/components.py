@@ -19,6 +19,15 @@ class WebElement:
         time.sleep(3)
         return self.driver.find_element(By.CSS_SELECTOR, self.locator)
 
+    def find_elements(self):
+        time.sleep(3)
+        return self.driver.find_elements(By.CSS_SELECTOR, self.locator)
+
+    def check_count_elements(self, count: int):
+        if len(self.find_elements()) == count:
+            return True
+        return False
+
     def get_text(self):
         return str(self.find_element().text)
 
