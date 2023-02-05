@@ -8,3 +8,4 @@ class AccordianPage(BasePage):
         super().__init__(driver, self.base_url)
         self.one_paragraph = WebElement(driver, '#section1Content > p')
         self.one_section_btn = WebElement(driver, '#section1Heading')
+        self.not_elem = WebElement(driver, 'p>p')

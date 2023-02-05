@@ -38,3 +38,8 @@ def test_visible_default_accordian(browser):
     browser.set_window_size(1000, 1000)
     assert accordian_page.one_paragraph.visible()
 
+def test_not_exist(browser):
+    accordian_page = AccordianPage(browser)
+    accordian_page.visit()
+    assert not accordian_page.not_elem.exist()
+
