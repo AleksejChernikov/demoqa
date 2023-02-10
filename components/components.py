@@ -4,6 +4,7 @@ import time
 from selenium.webdriver.support import expected_conditions as EC
 
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.common.keys import Keys
 
 
 class WebElement:
@@ -53,3 +54,16 @@ class WebElement:
 
     def send_keys(self, text: str):
         self.find_element().send_keys(text)
+
+    def clear(self):
+        self.find_element().send_keys(Keys.CONTROL + 'a')
+        self.find_element().send_keys(Keys.DELETE)
+
+    def get_dom_attribute(self, name: str):
+        value = self.find_element().get_dom_attribute(name)
+
+        if value is None:
+            return False
+        if len(value) > 0:
+            return value
+        return True
