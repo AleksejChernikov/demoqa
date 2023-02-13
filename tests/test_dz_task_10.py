@@ -15,5 +15,6 @@ def test_navigation_dz(browser):
     browser.back()
     browser.set_window_size(900, 400)
     browser.forward()
+    browser.set_window_size(1000, 1000)
 
 

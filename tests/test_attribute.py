@@ -11,6 +11,9 @@ def test_text_box(browser):
     text_box_page = TextBox(browser)
     text_box_page.visit()
 
+    text_box_page.visit()
+    assert text_box_page.full_name.exist()
+
     assert text_box_page.full_name.get_dom_attribute('placeholder') == 'Full Name'
 
 @allure.feature('check attr')
